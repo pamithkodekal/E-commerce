@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Filter & Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div>
+        <label>Filter: </label>
+        <select id="filter">
+            <option value="all">All</option>
+            <option value="oil">Oil</option>
+            <option value="Soap">Soap</option>
+            <option value="cosmetics">Cosmetics</option>
+        </select>
+    </div>
+
+    <div id="cart">
+        🛒 Cart: <span id="cartCount">0</span>
+    </div>
+</header>
+
+<div id="items">
+
+    <!-- Oils -->
+    <div class="card oil" data-name="Fortune">
+        <img src="https://m.media-amazon.com/images/I/61Yx5-NnYSL.jpg" alt="Fortune Oil">
+        <p>Fortune</p>
+        <button>Add to Cart</button>
+    </div>
+
+    <div class="card oil" data-name="Dhara">
+        <img src="https://m.media-amazon.com/images/I/71wHsUALuDL.jpg" alt="Dhara Oil">
+        <p>Dhara</p>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Soaps -->
+    <div class="card Soap" data-name="Lux">
+        <img src="https://m.media-amazon.com/images/I/61U4Kj0y0WL.jpg" alt="Lux Soap">
+        <p>Lux</p>
+        <button>Add to Cart</button>
+    </div>
+
+    <div class="card Soap" data-name="Dettol">
+        <img src="https://m.media-amazon.com/images/I/61h6YtYvBzL.jpg" alt="Dettol Soap">
+        <p>Dettol</p>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Cosmetics -->
+    <div class="card cosmetics" data-name="Lakmé">
+        <img src="https://m.media-amazon.com/images/I/61m1V1N9BJL.jpg" alt="Lakmé">
+        <p>Lakmé</p>
+        <button>Add to Cart</button>
+    </div>
+
+    <div class="card cosmetics" data-name="Mamaearth">
+        <img src="https://m.media-amazon.com/images/I/61FZs7PzDWL.jpg" alt="Mamaearth">
+        <p>Mamaearth</p>
+        <button>Add to Cart</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
