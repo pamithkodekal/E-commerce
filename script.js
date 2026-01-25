@@ -1,31 +1,56 @@
-// FILTER FUNCTIONALITY
-const filter = document.getElementById("filter");
-const cards = document.querySelectorAll(".card");
-
-filter.addEventListener("change", () => {
-    const value = filter.value;
-
-    cards.forEach(card => {
-        if (value === "all" || card.classList.contains(value)) {
-            card.style.display = "block";
-        } else {
-            card.style.display = "none";
-        }
-    });
-});
-
-// ADD TO CART FUNCTIONALITY
 let cart = [];
-const cartCount = document.getElementById("cartCount");
+let total = 0;
 
-document.querySelectorAll(".card button").forEach(button => {
-    button.addEventListener("click", (e) => {
-        const card = e.target.closest(".card");
-        const productName = card.dataset.name;
+function addToCart(name, price) {
+    cart.push({ name, price });
+    total += price;
+    renderCart();
+}
 
-        cart.push(productName);
-        cartCount.textContent = cart.length;
+function renderCart() {
+    const list = document.getElementById("cart-items");
+    const totalEl = document.getElementById("cart-total");
 
-        alert(productName + " added to cart!");
+    list.innerHTML = "";
+    cart.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+            ${item.name} - ₹${item.price}
+            <button onclick="removeFromCart(${index})">✖</button>
+        `;
+        list.appendChild(li);
+    });
+
+    totalEl.textContent = total;
+}
+
+function removeFromCart(index) {
+    total -= cart[index].price;
+    cart.splice(index, 1);
+    renderCart();
+}
+
+function buyNow() {
+    if (cart.length === 0) {
+        alert("Your cart is empty");
+        return;
+    }
+    alert(`Order placed successfully!\nTotal Amount: ₹${total}`);
+    cart = [];
+    total = 0;
+    renderCart();
+}
+
+// FILTER
+document.getElementById("filterSelect").addEventListener("change", e => {
+    const value = e.target.value;
+    document.querySelectorAll(".category").forEach(cat => {
+        if (value === "all" || cat.classList.contains(value)) {
+            cat.style.display = "grid";
+            cat.style.opacity = "1";
+        } else {
+            cat.style.opacity = "0";
+            setTimeout(() => cat.style.display = "none", 300);
+        }
     });
 });

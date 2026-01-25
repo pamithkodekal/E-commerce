@@ -1,0 +1,226 @@
+/* ===== THEME VARIABLES ===== */
+:root {
+    --bg-main: rgb(250, 243, 225);      /* Light Cream */
+    --bg-card: rgb(245, 231, 198);      /* Sandy Tan */
+    --primary: rgb(250, 129, 18);       /* Bright Orange */
+    --text-dark: rgb(34, 34, 34);       /* Deep Grey/Black */
+    --text-soft: rgba(34, 34, 34, 0.8);
+}
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* ===== NAVIGATION ===== */
+.navbar {
+    background-color: var(--bg-card);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo {
+    width: 35px;
+    height: auto;
+}
+
+.brand-name {
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.cart-btn {
+    background: var(--text-dark);
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ===== LAYOUT & HERO ===== */
+.content-wrapper {
+    max-width: 1100px;
+    margin: 4rem auto;
+    padding: 0 20px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 5rem;
+    align-items: flex-start;
+}
+
+.logo-card {
+    background-color: var(--bg-card);
+    border-radius: 30px;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 15px 15px 40px rgba(0,0,0,0.03);
+}
+
+.main-logo {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+}
+
+/* ===== TEXT CONTENT ===== */
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.lead {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text-soft);
+    margin-bottom: 2rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    color: var(--primary);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-item p {
+    font-size: 0.95rem;
+    color: var(--text-soft);
+}
+
+ul {
+    list-style: none;
+}
+
+ul li::before {
+    content: "●";
+    color: var(--primary);
+    display: inline-block; 
+    width: 1em;
+    margin-left: 0;
+}
+
+.commitment-box {
+    background: rgba(250, 129, 18, 0.05);
+    padding: 20px;
+    border-left: 4px solid var(--primary);
+    margin-bottom: 2rem;
+}
+
+.cta-primary {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.cta-primary:hover {
+    background-color: var(--text-dark);
+    transform: translateY(-3px);
+}
+
+/* ===== SHOP PREVIEW ===== */
+.separator {
+    margin: 4rem 0;
+    border: none;
+    height: 1px;
+    background: rgba(34,34,34,0.1);
+}
+
+.filter-bar {
+    margin-bottom: 1.5rem;
+}
+
+.dropdown {
+    background: var(--bg-card);
+    padding: 10px 25px;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    height: 280px;
+    background: var(--bg-card);
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: scale(1.02);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 850px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+    .logo-card {
+        padding: 30px;
+    }
+}

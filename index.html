@@ -2,69 +2,230 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Product Filter & Cart</title>
+    <title>E-Commerce Site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-    <div>
-        <label>Filter: </label>
-        <select id="filter">
-            <option value="all">All</option>
-            <option value="oil">Oil</option>
-            <option value="Soap">Soap</option>
-            <option value="cosmetics">Cosmetics</option>
-        </select>
-    </div>
-
-    <div id="cart">
-        🛒 Cart: <span id="cartCount">0</span>
+    <div id="layout">
+        <img id="logo" src="images/Gemini_Generated_Image_6a1u6w6a1u6w6a1u-removebg-preview.png">
+        <h2 id="EC">E-Commerce Site</h2>
+        <nav>
+            <a href="About.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
     </div>
 </header>
 
-<div id="items">
+<main>
 
-    <!-- Oils -->
-    <div class="card oil" data-name="Fortune">
-        <img src="https://m.media-amazon.com/images/I/61Yx5-NnYSL.jpg" alt="Fortune Oil">
-        <p>Fortune</p>
-        <button>Add to Cart</button>
-    </div>
+    <!-- FILTER -->
+    <section class="filter">
+        <label>Filter by Type:</label>
+        <select id="filterSelect">
+            <option value="all">All</option>
+            <option value="Oil">Oil</option>
+            <option value="Soap">Soap</option>
+            <option value="Shampoo">Shampoo</option>
+            <option value="Toys">Toys</option>
+        </select>
+    </section>
 
-    <div class="card oil" data-name="Dhara">
-        <img src="https://m.media-amazon.com/images/I/71wHsUALuDL.jpg" alt="Dhara Oil">
-        <p>Dhara</p>
-        <button>Add to Cart</button>
-    </div>
+    <!-- PRODUCTS -->
+    <section class="Cards">
 
-    <!-- Soaps -->
-    <div class="card Soap" data-name="Lux">
-        <img src="https://m.media-amazon.com/images/I/61U4Kj0y0WL.jpg" alt="Lux Soap">
-        <p>Lux</p>
-        <button>Add to Cart</button>
-    </div>
+        <!-- OIL -->
+        <div class="category Oil">
+            <div class="card">
+                <img src="images/Items/oil/61dK3VocRLL._SX679_.jpg">
+                <p>Safola Gold Refined Oil</p>
+                <span class="price">₹165</span>
+                <button onclick="addToCart('Safola Gold Refined Oil',165)">Add to Cart</button>
+            </div>
 
-    <div class="card Soap" data-name="Dettol">
-        <img src="https://m.media-amazon.com/images/I/61h6YtYvBzL.jpg" alt="Dettol Soap">
-        <p>Dettol</p>
-        <button>Add to Cart</button>
-    </div>
+            <div class="card">
+                <img src="images/Items/oil/61qsW9+zfaL._SL1100_.jpg">
+                <p>Fortune Sunflower Oil</p>
+                <span class="price">₹150</span>
+                <button onclick="addToCart('Fortune Sunflower Oil',150)">Add to Cart</button>
+            </div>
 
-    <!-- Cosmetics -->
-    <div class="card cosmetics" data-name="Lakmé">
-        <img src="https://m.media-amazon.com/images/I/61m1V1N9BJL.jpg" alt="Lakmé">
-        <p>Lakmé</p>
-        <button>Add to Cart</button>
-    </div>
+            <div class="card">
+                <img src="images/Items/oil/61rcMYf0tpL._SL1500_.jpg">
+                <p>Tata Simply Better Oil</p>
+                <span class="price">₹199</span>
+                <button onclick="addToCart('Tata Simply Better Oil',199)">Add to Cart</button>
+            </div>
 
-    <div class="card cosmetics" data-name="Mamaearth">
-        <img src="https://m.media-amazon.com/images/I/61FZs7PzDWL.jpg" alt="Mamaearth">
-        <p>Mamaearth</p>
-        <button>Add to Cart</button>
-    </div>
+            <div class="card">
+                <img src="images/Items/oil/81EhnYkQP0L._SL1500_.jpg">
+                <p>Gemini Sunflower Oil</p>
+                <span class="price">₹145</span>
+                <button onclick="addToCart('Gemini Sunflower Oil',145)">Add to Cart</button>
+            </div>
 
+            <div class="card">
+                <img src="images/Items/oil/617pegINIAL._SL1000_.jpg">
+                <p>Emami Healthy Oil</p>
+                <span class="price">₹170</span>
+                <button onclick="addToCart('Emami Healthy Oil',170)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/Items/oil/711bMUEX1NL._SL1500_.jpg">
+                <p>Emami Rice Bran Oil</p>
+                <span class="price">₹185</span>
+                <button onclick="addToCart('Emami Rice Bran Oil',185)">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- SOAP -->
+        <div class="category Soap">
+            <div class="card">
+                <img src="images/Items/Soap/61+-miwwAqL._SL1000_.jpg">
+                <p>Rexona Soap</p>
+                <span class="price">₹45</span>
+                <button onclick="addToCart('Rexona Soap',45)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/Items/Soap/61+da5Ch45L._SL1500_.jpg">
+                <p>Jo Herbal Soap</p>
+                <span class="price">₹38</span>
+                <button onclick="addToCart('Jo Herbal Soap',38)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/Items/Soap/61APCxV6GRL._SL1500_.jpg">
+                <p>Patanjali Neem Soap</p>
+                <span class="price">₹35</span>
+                <button onclick="addToCart('Patanjali Neem Soap',35)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/Items/Soap/61zl0hhQrdL._SL1000_.jpg">
+                <p>Dettol Original Soap</p>
+                <span class="price">₹42</span>
+                <button onclick="addToCart('Dettol Original Soap',42)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/Items/Soap/71glBfplo9L._SL1500_.jpg">
+                <p>Santoor Sandal Soap</p>
+                <span class="price">₹40</span>
+                <button onclick="addToCart('Santoor Sandal Soap',40)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/Items/Soap/71mSTJwI46L._SL1500_.jpg">
+                <p>Medimix Soap</p>
+                <span class="price">₹48</span>
+                <button onclick="addToCart('Medimix Soap',48)">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- SHAMPOO -->
+        <div class="category Shampoo">
+            <div class="card">
+                <img src="images/Items/Shampoo/41AG1Yii4eL._SL1000_.jpg">
+                <p>Dove Repair Shampoo</p>
+                <span class="price">₹220</span>
+                <button onclick="addToCart('Dove Repair Shampoo',220)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/Items/Shampoo/41R69jyJqsL._SL1000_.jpg">
+                <p>Dove Hairfall Rescue</p>
+                <span class="price">₹230</span>
+                <button onclick="addToCart('Dove Hairfall Rescue',230)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/Items/Shampoo/51pruNF+rXL._SL1500_.jpg">
+                <p>L’Oreal Repair Shampoo</p>
+                <span class="price">₹299</span>
+                <button onclick="addToCart('L’Oreal Repair Shampoo',299)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/Items/Shampoo/51RnEZJ82WL._SL1000_.jpg">
+                <p>TRESemmé Shampoo</p>
+                <span class="price">₹320</span>
+                <button onclick="addToCart('TRESemmé Shampoo',320)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/Items/Shampoo/51vI5+Mb86L._SL1080_.jpg">
+                <p>Scalpe Pro Shampoo</p>
+                <span class="price">₹380</span>
+                <button onclick="addToCart('Scalpe Pro Shampoo',380)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/Items/Shampoo/5152pBdloeL._SL1500_.jpg">
+                <p>L’Oreal Total Repair</p>
+                <span class="price">₹310</span>
+                <button onclick="addToCart('L’Oreal Total Repair',310)">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- TOYS -->
+        <div class="category Toys">
+            <div class="card">
+                <img src="images/Items/toys/41DQt-UKbvL._SL1080_.jpg">
+                <p>Musical Toy</p>
+                <span class="price">₹499</span>
+                <button onclick="addToCart('Musical Toy',499)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/Items/toys/51pGit1uTFL._SL1280_.jpg">
+                <p>Thar Miniature</p>
+                <span class="price">₹699</span>
+                <button onclick="addToCart('Thar Miniature',699)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/Items/toys/61cEEA74c0L._SL1000_.jpg">
+                <p>Defender Toy</p>
+                <span class="price">₹749</span>
+                <button onclick="addToCart('Defender Toy',749)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/Items/toys/61jTkdQO2KL._SL1500_.jpg">
+                <p>Puppy Toy</p>
+                <span class="price">₹399</span>
+                <button onclick="addToCart('Puppy Toy',399)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/Items/toys/61SVuZ86U4L._SL1419_.jpg">
+                <p>Rolls Royce Model</p>
+                <span class="price">₹899</span>
+                <button onclick="addToCart('Rolls Royce Model',899)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/Items/toys/71G-E8cg47L._SL1500_.jpg">
+                <p>Rocket Launcher</p>
+                <span class="price">₹549</span>
+                <button onclick="addToCart('Rocket Launcher',549)">Add to Cart</button>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+<!-- CART -->
+<div id="cartBox">
+    <h3>🛒 Cart</h3>
+    <ul id="cart-items"></ul>
+    <p>Total to Pay: ₹<span id="cart-total">0</span></p>
+    <button class="buy" onclick="buyNow()">Buy Now</button>
 </div>
 
 <script src="script.js"></script>
